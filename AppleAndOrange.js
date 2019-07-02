@@ -37,7 +37,7 @@ oranges -> array - values of oranges
    
   // Adding each apple from apples array with the tree position  i.e a
     apples = apples.map(apple => apple + a);
-
+    
 /* 
 filtering out only those apples which lie in range of house i.e (s and t)
 filter property return only true values ;so apples array will be updated with only 
