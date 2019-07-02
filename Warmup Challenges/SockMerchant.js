@@ -40,7 +40,6 @@ function sockMerchant(n, ar) {
     }
 
     return matchingPair;
-
     
 
 }
