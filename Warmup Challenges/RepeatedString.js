@@ -37,6 +37,7 @@ function repeatedString(s, n) {
     //which is partial string
         let repeatedStringNumber = Math.floor(n / s.length); 
 
+  
     //'a' will repeat itself for this many times 
     countA = countA * repeatedStringNumber;
 
