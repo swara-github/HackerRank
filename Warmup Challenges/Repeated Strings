@@ -26,28 +26,36 @@ function readLine() {
 
 // Complete the repeatedString function below.
 function repeatedString(s, n) {
-    let actuallength = n;
-    let initialString = s;
-    let currentString = s;
+    //Given string (s) -> 'abac' 
+    //String should repeat for n -> 10 
 
-    if (initialString == 'a') {
-        return actuallength;
-}
-    if (initialString.length <= actuallength){
-       
-        for (let i = initialString.length /*3*/ ; i <= actuallength /*10*/;)
-        {
-            currentString = initialString + currentString;
-            i = i + initialString.length; 
-                     
-        }
+        //In actual string ,count number of 'a' ->returns 2
+       let countA = s.split('').filter(letter => letter == 'a').length;
 
-    }
+    // repeat the string for n times ->returns 3  in this case
+    //but this does not include the last characters 
+    //which is partial string
+        let repeatedStringNumber = Math.floor(n / s.length); 
 
-   let newString= currentString.substring(0, actuallength); // retreives first 10 elements
-    
-    let countA = newString.split('').filter(letter => letter=='a').length;
+    //'a' will repeat itself for this many times 
+    countA = countA * repeatedStringNumber;
 
+    //retrieve the last characters ->returns 1 in this case
+     //partial string length
+    let lastCharacters = n % s.length;
+   
+
+    //partial string -> return 'a' in this case
+    let lastString = s.substring(0,lastCharacters);
+
+    //count number of 'a' in this partial string
+    let countAforLastChracters = lastString.split('').filter(letter => letter == 'a').length;
+
+
+//add actual count of 'a' in complete repeated string and partial string
+    countA = countA + countAforLastChracters;
+
+//return the count
     return countA;
 }
 
